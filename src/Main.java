@@ -193,9 +193,31 @@ public class Main {
                             penguinObject.setWalkSpeed(keyboard.nextInt());
 
             break;
+                        case 2 :
+
+                            System.out.println("Age of the Penguin : " + penguinObject.getAge());
+                            System.out.println("Height of the Penguin : " + penguinObject.getHeight());
+                            System.out.println("Weight of the Penguin : " + penguinObject.getWeight());
+
+                            if (penguinObject.isSwimming() ) {
+
+                            System.out.println("Swim Speed  of the Penguin : " + penguinObject.getSwimSpeed());
+                            }
+                            System.out.println("walking speed of the Penguin : " + penguinObject.getWalkSpeed());
 
 
+                            break;
+                        case 3 :
+                            if (penguinObject.isSwimming() ) {
+                                penguinObject.swimming();
+                            }
+                                penguinObject.walking();
 
+                            break;
+                        case 4:
+                            penguinObject.eatingFood();
+                            penguinObject.eatingCompleted();
+                            break;
                     }
 
                     System.out.println("Continue with this animal ? (Enter 1 for yes/ 2 for no):");
