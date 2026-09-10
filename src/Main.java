@@ -12,6 +12,8 @@ public class Main {
 
         // for menu choice
         int menuChoice = 1;
+        Tiger tigerObject = new Tiger();
+        Dolphin dolphinObject = new Dolphin();
 
         /** TODO 1: extend the class Animal to create a new
          *          land based animal named "Tiger" which extends
@@ -74,10 +76,13 @@ public class Main {
             switch (animalChoiceMenu(keyboard)) {
                 case 1:
                     do {
-                        System.out.println("The animal which is chosen is : ");
+                        System.out.println("The animal which is chosen is : " + tigerObject.getNameOfAnimal());
                         // get menu choice
+                        menuChoice = animalDetailsManipulationMenu(keyboard,tigerObject);
                         switch (menuChoice) {
+
                             case 1:
+
                                 break;
 
                             case 2:
@@ -97,17 +102,24 @@ public class Main {
                     break;
                 case 2:
                     do {
-                        System.out.println("The animal which is chosen is : ");
+                        System.out.println("The animal which is chosen is : " + dolphinObject.getNameOfAnimal());
                         // get menu choice
+                        menuChoice = animalDetailsManipulationMenu(keyboard,tigerObject);
                         switch (menuChoice) {
                             case 1:
+                                System.out.println("set the color of the Dolphin :");
+                                dolphinObject.setColor(keyboard.nextLine());
+                                System.out.println("set the swimming speed of the Dolphin :");
+                                dolphinObject.setSwimmingSpeed(keyboard.nextInt());
                                 break;
 
-                            case 2:
-                                break;
                             case 3:
                                 break;
                             case 4:
+                                break;
+                            case 2:
+                                System.out.println("Color of the Dolphin : " + dolphinObject.getColor());
+                                System.out.println("Swimming Speed of the Dolphin : " + dolphinObject.getSwimmingSpeed());
                                 break;
                             default:
                                 System.out.println("Not supported");
