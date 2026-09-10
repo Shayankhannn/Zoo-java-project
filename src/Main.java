@@ -107,20 +107,35 @@ public class Main {
                         menuChoice = animalDetailsManipulationMenu(keyboard,tigerObject);
                         switch (menuChoice) {
                             case 1:
+                                System.out.println("set the height of the Dolphin :");
+                                dolphinObject.setHeight(keyboard.nextInt());
+                                System.out.println("set the weight of the Dolphin :");
+                                dolphinObject.setWeight(keyboard.nextInt());
+                                System.out.println("set the age of the Dolphin :");
+                                dolphinObject.setAge(keyboard.nextInt());
                                 System.out.println("set the color of the Dolphin :");
+                                keyboard.nextLine();
                                 dolphinObject.setColor(keyboard.nextLine());
                                 System.out.println("set the swimming speed of the Dolphin :");
                                 dolphinObject.setSwimmingSpeed(keyboard.nextInt());
                                 break;
-
-                            case 3:
-                                break;
-                            case 4:
-                                break;
                             case 2:
+                                System.out.println("Age of the Dolphin : " + dolphinObject.getAge());
+                                System.out.println("Height of the Dolphin : " + dolphinObject.getHeight());
+                                System.out.println("Weight of the Dolphin : " + dolphinObject.getWeight());
+
+
                                 System.out.println("Color of the Dolphin : " + dolphinObject.getColor());
                                 System.out.println("Swimming Speed of the Dolphin : " + dolphinObject.getSwimmingSpeed());
                                 break;
+                            case 3:
+                                dolphinObject.swimming();
+                                break;
+                            case 4:
+                                dolphinObject.eatingFood();
+                                dolphinObject.eatingCompleted();
+                                break;
+
                             default:
                                 System.out.println("Not supported");
 
