@@ -1,0 +1,1 @@
+everything is working except penguin : in isswimming i have to fix it so ittake bool value now if i write 0 or anything it breaks
