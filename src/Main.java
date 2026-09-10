@@ -82,14 +82,37 @@ public class Main {
                         switch (menuChoice) {
 
                             case 1:
+                                System.out.println("set the height of the Tiger :");
+                                tigerObject.setHeight(keyboard.nextInt());
+                                System.out.println("set the weight of the Tiger :");
+                                tigerObject.setWeight(keyboard.nextInt());
+                                System.out.println("set the age of the Tiger :");
+                                tigerObject.setAge(keyboard.nextInt());
+                                System.out.println("set the sound level of roar of the Tiger :");
+                                tigerObject.setAge(keyboard.nextInt());
+                                System.out.println("set the number of stripes of the Tiger :");
+                                tigerObject.setAge(keyboard.nextInt());
+                                System.out.println("set the speed of the Tiger :");
+                                tigerObject.setAge(keyboard.nextInt());
+
+
 
                                 break;
 
                             case 2:
+                                System.out.println("Age of the Tiger : " + tigerObject.getAge());
+                                System.out.println("Height of the Tiger : " + tigerObject.getHeight());
+                                System.out.println("Weight of the Tiger : " + tigerObject.getWeight());
+                                System.out.println("speed of the Tiger : " + tigerObject.getSpeed());
+                                System.out.println("sound level of roar of the Tiger : " + tigerObject.getSoundLevelOfRoar());
+                                System.out.println("number of stipes of the Tiger : " + tigerObject.getNumberOfStripes());
+
                                 break;
                             case 3:
+                                tigerObject.walking();
                                 break;
                             case 4:
+                                tigerObject.eatingFood();
                                 break;
                             default:
                                 System.out.println("Not supported");
