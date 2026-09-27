@@ -1,54 +1,75 @@
-public class Penguin extends Animal implements Swim,Walk{
-    private boolean isSwimming ;
-   private int walkSpeed;
-    private int swimSpeed;
+import java.io.Serializable;
 
-    public Penguin(){
-        super("Penguin ");
-    }
+/**
+ * TODO 1.b: Implement serializable interface for class Penguin
+ */
+public class Penguin extends Animal implements Walk, Swim, Serializable {
+    private static final long serialVersionUID = 1L;
+    boolean isSwimming;
+    int walkSpeed;
+    int swimSpeed;
 
     public boolean isSwimming() {
         return isSwimming;
-    }
-
-    public int getWalkSpeed() {
-        return walkSpeed;
-    }
-
-    public int getSwimSpeed() {
-        return swimSpeed;
     }
 
     public void setSwimming(boolean swimming) {
         isSwimming = swimming;
     }
 
+    public int getWalkSpeed() {
+        return walkSpeed;
+    }
+
     public void setWalkSpeed(int walkSpeed) {
         this.walkSpeed = walkSpeed;
+    }
+
+    public int getSwimSpeed() {
+        return swimSpeed;
     }
 
     public void setSwimSpeed(int swimSpeed) {
         this.swimSpeed = swimSpeed;
     }
 
+    public Penguin() {
+        super("Penguin");
+    }
+
+    @Override
+    public String toString() {
+        return "Penguin{" +
+                "isSwimming=" + isSwimming +
+                ", walkSpeed=" + walkSpeed +
+                ", swimSpeed=" + swimSpeed +
+                '}';
+    }
+
+    /**
+     * TODO 2.b: Override the toString method display the deserialized content
+     * after reading the file
+     */
+
+
     @Override
     public void eatingFood() {
-
-    System.out.print("Penguin: I am eating delicious fish");
+        System.out.println("Penguin: I am eating delicious fish.");
     }
 
     @Override
     public void eatingCompleted() {
-    System.out.print("I have eaten fish");
-    }
-
-    @Override
-    public void walking() {
-        System.out.println("I am walking at the speed " + walkSpeed + " mph");
+        System.out.println("Penguin: I have eaten fish.");
     }
 
     @Override
     public void swimming() {
-        System.out.println("Dolphin: I am swimming at the speed of " + swimSpeed + " nautical miles per hour");
+        System.out.println("Penguin: I am swimming at the speed " + swimSpeed + " nautical miles per hour");
     }
+
+    @Override
+    public void walking() {
+        System.out.println("Penguin: I am walking at the speed " + walkSpeed + " mph");
+    }
+
 }

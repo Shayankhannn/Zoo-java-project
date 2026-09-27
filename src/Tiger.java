@@ -1,7 +1,19 @@
-public class Tiger extends Animal implements Walk{
-    private int  numberOfStripes ;
-    private int speed ;
-    private int soundLevelOfRoar ;
+import java.io.Serializable;
+
+/**
+ * TODO 1.a: Implement serializable interface for class Tiger
+ */
+public class Tiger extends Animal implements Walk ,Serializable{
+    private static final long serialVersionUID = 1L;
+    // property for stripes on tiger
+    int numberOfStripes;
+
+    // property for speed of tiger during walking or running
+    int speed;
+
+    // property for sound level when tiger roars
+    int soundLevel;
+
 
     public Tiger() {
         super("Tiger");
@@ -11,38 +23,49 @@ public class Tiger extends Animal implements Walk{
         return numberOfStripes;
     }
 
+    public void setNumberOfStripes(int numberOfStripes) {
+        this.numberOfStripes = numberOfStripes;
+    }
+
     public int getSpeed() {
         return speed;
-    }
-
-    public int getSoundLevelOfRoar() {
-        return soundLevelOfRoar;
-    }
-
-    public void setSoundLevelOfRoar(int soundLevelOfRoar) {
-        this.soundLevelOfRoar = soundLevelOfRoar;
     }
 
     public void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    public void setNumberOfStripes(int numberOfStripes) {
-        this.numberOfStripes = numberOfStripes;
+    public int getSoundLevel() {
+        return soundLevel;
     }
+
+    public void setSoundLevel(int soundLevel) {
+        this.soundLevel = soundLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Tiger{" +
+                "numberOfStripes=" + numberOfStripes +
+                ", speed=" + speed +
+                ", soundLevel=" + soundLevel +
+                '}';
+    }
+
+    /**
+     * TODO 2.a: Override the toString method display the deserialized content
+     * after reading the file
+     */
 
 
     @Override
     public void eatingCompleted() {
-        System.out.println("Tiger: I have eaten meat");
+        System.out.println("Tiger: I have eaten meat.");
     }
+
     @Override
     public void walking() {
-        System.out.println("I am walking at the speed " + speed+ " mph");
+        System.out.println("Tiger: I am moving at the speed " + speed);
     }
 
 }
-
-
-
-
